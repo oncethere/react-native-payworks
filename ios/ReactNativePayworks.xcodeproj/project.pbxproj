@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEE22B241E3967C40052DA54 /* ReactNativePayworks.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE22B231E3967C40052DA54 /* ReactNativePayworks.m */; };
+		CEE22B251E3967C40052DA54 /* ReactNativePayworks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEE22B221E3967C40052DA54 /* ReactNativePayworks.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEE22B1D1E3967C40052DA54 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CEE22B251E3967C40052DA54 /* ReactNativePayworks.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		19EF6D95003C75CCEA4AD406 /* Pods-ReactNativePayworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativePayworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativePayworks/Pods-ReactNativePayworks.release.xcconfig"; sourceTree = "<group>"; };
+		A0B0E96DC0CCFE0B77786D7C /* libPods-ReactNativePayworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativePayworks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE22B1F1E3967C40052DA54 /* libReactNativePayworks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativePayworks.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE22B221E3967C40052DA54 /* ReactNativePayworks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativePayworks.h; sourceTree = "<group>"; };
+		CEE22B231E3967C40052DA54 /* ReactNativePayworks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativePayworks.m; sourceTree = "<group>"; };
+		E9C9DBD1550F70FB392A8583 /* Pods-ReactNativePayworks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativePayworks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativePayworks/Pods-ReactNativePayworks.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEE22B1C1E3967C40052DA54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FC7EA3E51AF7079041C7722 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9DBD1550F70FB392A8583 /* Pods-ReactNativePayworks.debug.xcconfig */,
+				19EF6D95003C75CCEA4AD406 /* Pods-ReactNativePayworks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A79E1E26DE79127F0EBCED34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0E96DC0CCFE0B77786D7C /* libPods-ReactNativePayworks.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEE22B161E3967C40052DA54 = {
+			isa = PBXGroup;
+			children = (
+				CEE22B211E3967C40052DA54 /* ReactNativePayworks */,
+				CEE22B201E3967C40052DA54 /* Products */,
+				9FC7EA3E51AF7079041C7722 /* Pods */,
+				A79E1E26DE79127F0EBCED34 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEE22B201E3967C40052DA54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEE22B1F1E3967C40052DA54 /* libReactNativePayworks.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEE22B211E3967C40052DA54 /* ReactNativePayworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEE22B221E3967C40052DA54 /* ReactNativePayworks.h */,
+				CEE22B231E3967C40052DA54 /* ReactNativePayworks.m */,
+			);
+			path = ReactNativePayworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEE22B1E1E3967C40052DA54 /* ReactNativePayworks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEE22B281E3967C40052DA54 /* Build configuration list for PBXNativeTarget "ReactNativePayworks" */;
+			buildPhases = (
+				C0CA6145330C6F8690A903C2 /* [CP] Check Pods Manifest.lock */,
+				CEE22B1B1E3967C40052DA54 /* Sources */,
+				CEE22B1C1E3967C40052DA54 /* Frameworks */,
+				CEE22B1D1E3967C40052DA54 /* CopyFiles */,
+				4027ED5C5CD8E64A472D20F6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactNativePayworks;
+			productName = ReactNativePayworks;
+			productReference = CEE22B1F1E3967C40052DA54 /* libReactNativePayworks.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEE22B171E3967C40052DA54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = OnceThere;
+				TargetAttributes = {
+					CEE22B1E1E3967C40052DA54 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CEE22B1A1E3967C40052DA54 /* Build configuration list for PBXProject "ReactNativePayworks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEE22B161E3967C40052DA54;
+			productRefGroup = CEE22B201E3967C40052DA54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEE22B1E1E3967C40052DA54 /* ReactNativePayworks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4027ED5C5CD8E64A472D20F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativePayworks/Pods-ReactNativePayworks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0CA6145330C6F8690A903C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEE22B1B1E3967C40052DA54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE22B241E3967C40052DA54 /* ReactNativePayworks.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEE22B261E3967C40052DA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CEE22B271E3967C40052DA54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEE22B291E3967C40052DA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C9DBD1550F70FB392A8583 /* Pods-ReactNativePayworks.debug.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/payworks\"",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CEE22B2A1E3967C40052DA54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19EF6D95003C75CCEA4AD406 /* Pods-ReactNativePayworks.release.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEE22B1A1E3967C40052DA54 /* Build configuration list for PBXProject "ReactNativePayworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE22B261E3967C40052DA54 /* Debug */,
+				CEE22B271E3967C40052DA54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEE22B281E3967C40052DA54 /* Build configuration list for PBXNativeTarget "ReactNativePayworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE22B291E3967C40052DA54 /* Debug */,
+				CEE22B2A1E3967C40052DA54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEE22B171E3967C40052DA54 /* Project object */;
+}

@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+project 'RNPDemo.xcodeproj'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://bitbucket.org/mpymnt/io.mpymnt.repo.pods.git'
+
+def pods
+  pod 'react-native-payworks', :path => '../node_modules/react-native-payworks/ios'
+  pod 'React', :path => '../node_modules/react-native'
+end
+
+target 'RNPDemo' do
+  pods
+end

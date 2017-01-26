@@ -1,0 +1,65 @@
+PODS:
+  - CocoaLumberjack (2.0.3):
+    - CocoaLumberjack/Default (= 2.0.3)
+    - CocoaLumberjack/Extensions (= 2.0.3)
+  - CocoaLumberjack/Core (2.0.3)
+  - CocoaLumberjack/Default (2.0.3):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.3):
+    - CocoaLumberjack/Default
+  - payworks (2.16.0):
+    - payworks/mpos (= 2.16.0)
+  - payworks/mpos (2.16.0):
+    - payworks/mpos/accessories (= 2.16.0)
+    - payworks/mpos/comlinks (= 2.16.0)
+    - payworks/mpos/core (= 2.16.0)
+  - payworks/mpos/accessories (2.16.0):
+    - payworks/mpos/accessories/miura (= 2.16.0)
+    - payworks/mpos/accessories/sewoo (= 2.16.0)
+    - payworks/mpos/accessories/verifone-e105 (= 2.16.0)
+  - payworks/mpos/accessories/miura (2.16.0):
+    - payworks/mpos/comlinks/externalaccessory
+    - payworks/mpos/comlinks/tcp
+    - payworks/mpos/core
+  - payworks/mpos/accessories/sewoo (2.16.0):
+    - payworks/mpos/core
+  - payworks/mpos/accessories/verifone-e105 (2.16.0):
+    - payworks/mpos/comlinks/verifone
+    - payworks/mpos/core
+  - payworks/mpos/comlinks (2.16.0):
+    - payworks/mpos/comlinks/externalaccessory (= 2.16.0)
+    - payworks/mpos/comlinks/tcp (= 2.16.0)
+    - payworks/mpos/comlinks/verifone (= 2.16.0)
+  - payworks/mpos/comlinks/externalaccessory (2.16.0):
+    - payworks/mpos/core
+  - payworks/mpos/comlinks/tcp (2.16.0):
+    - payworks/mpos/core
+  - payworks/mpos/comlinks/verifone (2.16.0):
+    - payworks/mpos/core
+  - payworks/mpos/core (2.16.0):
+    - CocoaLumberjack (~> 2.0.0)
+  - React (0.34.1):
+    - React/Core (= 0.34.1)
+  - react-native-payworks (0.1.0):
+    - payworks (~> 2.16.0)
+  - React/Core (0.34.1)
+
+DEPENDENCIES:
+  - React (from `../node_modules/react-native`)
+  - react-native-payworks (from `../node_modules/react-native-payworks/ios`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: ../node_modules/react-native
+  react-native-payworks:
+    :path: ../node_modules/react-native-payworks/ios
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: f58d8a19629f4d8379ae14bb3534def24161430e
+  payworks: 8dcb08fc088d66ba64e0725dbe70a3dba69346aa
+  React: fc15d22bec0ec10fe15c12749fbefdac37ddc541
+  react-native-payworks: 41c7d7d6363b8d4e7621ebcc437bc7310fcf438d
+
+PODFILE CHECKSUM: cda4252bc6afe80b47acac4b2cb2cfb534f5ecf8
+
+COCOAPODS: 1.1.1

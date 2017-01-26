@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+project 'ReactNativePayworks.xcodeproj'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://bitbucket.org/mpymnt/io.mpymnt.repo.pods.git'
+
+def pods
+  pod 'payworks', '~> 2.16.0'
+end
+
+target 'ReactNativePayworks' do
+  pods
+end
