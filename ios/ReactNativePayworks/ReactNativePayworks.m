@@ -102,6 +102,8 @@ RCT_REMAP_METHOD(transaction,
      {
          NSLog(@"Transaction ended, transaction status is %lu", (unsigned long) transaction.status);
 
+         NSString *transactionIdentifier = @"";
+         NSString *institute = @"";
          NSString *status;
          switch(transaction.status) {
             default:
@@ -122,6 +124,8 @@ RCT_REMAP_METHOD(transaction,
               // Ask the merchant, whether the shopper wants to have a receipt
               // and close the checkout UI
               status = @"MPTransactionStatusApproved";
+              transactionIdentifier = transaction.clearingDetails.transactionIdentifier;
+              institute = transaction.clearingDetails.institute;
               break;
             case MPTransactionStatusDeclined:
               // Transaction was declined
@@ -143,8 +147,8 @@ RCT_REMAP_METHOD(transaction,
          }
          resolve( @{
            @"status": status,
-           @"transactionIdentifier": transaction.clearingDetails.transactionIdentifier,
-           @"institute": transaction.clearingDetails.institute,
+           @"transactionIdentifier": transactionIdentifier,
+           @"institute": institute,
          });
      }];
 }
