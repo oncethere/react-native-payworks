@@ -58,15 +58,17 @@ RCT_REMAP_METHOD(transaction,
                                              registered:^(MPTransactionProcess *process,
                                                           MPTransaction *transaction)
      {
-         NSLog(@"registered MPTransactionProcess, transaction id: %@", transaction.identifier);
+        //  NSLog(@"registered MPTransactionProcess, transaction id: %@", transaction.identifier);
+         [self.bridge.eventDispatcher sendAppEventWithName:@"PayworksTransactionEvent"
+                                                      body:[self createTransactionDetailsObject:transaction details:nil]];
      }
                                         statusChanged:^(MPTransactionProcess *process,
                                                         MPTransaction *transaction,
                                                         MPTransactionProcessDetails *details)
      {
-         NSLog(@"%@\n%@", details.information[0], details.information[1]);
+        //  NSLog(@"%@\n%@", details.information[0], details.information[1]);
          [self.bridge.eventDispatcher sendAppEventWithName:@"PayworksTransactionEvent"
-                                                      body:@{@"details": details.information}];
+                                                      body:[self createTransactionDetailsObject:transaction details:details]];
      }
                                        actionRequired:^(MPTransactionProcess *process,
                                                         MPTransaction *transaction,
@@ -100,11 +102,9 @@ RCT_REMAP_METHOD(transaction,
               MPTransaction *transaction,
               MPTransactionProcessDetails *details)
      {
-         NSLog(@"Transaction ended, transaction status is %lu", (unsigned long) transaction.status);
+        //  NSLog(@"Transaction ended, transaction status is %lu", (unsigned long) transaction.status);
+        NSString* status;
 
-         NSString *transactionIdentifier = @"";
-         NSString *institute = @"";
-         NSString *status;
          switch(transaction.status) {
             default:
             case MPTransactionStatusUnknown:
@@ -124,8 +124,6 @@ RCT_REMAP_METHOD(transaction,
               // Ask the merchant, whether the shopper wants to have a receipt
               // and close the checkout UI
               status = @"MPTransactionStatusApproved";
-              transactionIdentifier = transaction.clearingDetails.transactionIdentifier;
-              institute = transaction.clearingDetails.institute;
               break;
             case MPTransactionStatusDeclined:
               // Transaction was declined
@@ -145,10 +143,12 @@ RCT_REMAP_METHOD(transaction,
               status = @"MPTransactionStatusInconclusive";
               break;
          }
-         resolve( @{
+
+         NSDictionary* transDet = [self createTransactionDetailsObject:transaction details:details];
+         resolve(@{
            @"status": status,
-           @"transactionIdentifier": transactionIdentifier,
-           @"institute": institute,
+           @"transaction": transDet[@"transaction"],
+           @"details": transDet[@"details"]
          });
      }];
 }
@@ -164,6 +164,87 @@ RCT_REMAP_METHOD(submitSignature,
   // [process continueWithCustomerSignatureOnReceipt];
 
   resolve( @{} );
+}
+
+
+// Create RCT-serializable transaction/details object
+- (NSDictionary*) createTransactionDetailsObject: (MPTransaction*)transaction
+                                         details: (MPTransactionProcessDetails*)details
+{
+  MPTransaction* _transaction;
+  MPTransactionProcessDetails* _details;
+
+  if (transaction == nil) {
+    _transaction = [NSNull null];
+  }
+  else {
+    MPCardDetails* _cardDetails;
+    MPClearingDetails* _clearingDetails;
+
+    if (transaction.cardDetails == nil) {
+      _cardDetails = [NSNull null];
+    }
+    else {
+      _cardDetails = @{
+        @"cardHolderName": transaction.cardDetails.cardHolderName ?: [NSNull null],
+        @"expiryMonth": [NSNumber numberWithUnsignedLong:transaction.cardDetails.expiryMonth],
+        @"expiryYear": [NSNumber numberWithUnsignedLong:transaction.cardDetails.expiryYear],
+        @"fingerprint": transaction.cardDetails.fingerprint ?: [NSNull null],
+        @"maskedCardNumber": transaction.cardDetails.maskedCardNumber ?: [NSNull null],
+        @"scheme": [NSNumber numberWithUnsignedLong:transaction.cardDetails.scheme]
+      };
+    }
+    if (transaction.clearingDetails == nil) {
+      _clearingDetails = [NSNull null];
+    }
+    else {
+      _clearingDetails = @{
+        @"institute": transaction.clearingDetails.institute ?: [NSNull null],
+        @"transactionIdentifier": transaction.clearingDetails.transactionIdentifier ?: [NSNull null],
+        @"originalTransactionIdentifier": transaction.clearingDetails.originalTransactionIdentifier ?: [NSNull null],
+        @"completed": transaction.clearingDetails.completed ?
+                          [NSDateFormatter localizedStringFromDate:transaction.clearingDetails.completed
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterFullStyle]
+                          : [NSNull null],
+        @"authorizationCode": transaction.clearingDetails.authorizationCode ?: [NSNull null],
+        @"merchantId": transaction.clearingDetails.merchantId ?: [NSNull null],
+        @"terminalId": transaction.clearingDetails.terminalId ?: [NSNull null],
+        @"statusText": transaction.clearingDetails.statusText ?: [NSNull null]
+      };
+    }
+
+    _transaction = @{
+      @"captured": [NSNumber numberWithBool:transaction.captured],
+      @"amount": transaction.amount ?: [NSNull null],
+      @"subject": transaction.subject ?: [NSNull null],
+      @"type": [NSNumber numberWithUnsignedLong:transaction.type],
+      @"status": [NSNumber numberWithUnsignedLong:transaction.status],
+      @"state": [NSNumber numberWithUnsignedLong:transaction.state],
+      @"error": transaction.error ?: [NSNull null],
+      @"identifier": transaction.identifier ?: [NSNull null],
+      @"customIdentifier": transaction.customIdentifier ?: [NSNull null],
+      @"cardDetails": _cardDetails,
+      @"clearingDetails": _clearingDetails
+    };
+  }
+
+  if (details == nil) {
+    _details = [NSNull null];
+  }
+  else {
+    _details = @{
+      @"state": [NSNumber numberWithInt:details.state],
+      @"stateDetails": [NSNumber numberWithUnsignedLong:details.stateDetails],
+      @"information": details.information ?: [NSNull null],
+      @"error": details.error ? details.error.localizedDescription : [NSNull null],
+    };
+  }
+
+  return @{
+    @"transaction": _transaction,
+    @"details": _details
+  };
 }
 
 @end
