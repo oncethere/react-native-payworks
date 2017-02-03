@@ -166,6 +166,14 @@ RCT_REMAP_METHOD(submitSignature,
   resolve( @{} );
 }
 
+RCT_REMAP_METHOD(cancelSignature,
+                 resolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+  [signatureProcess continueWithCustomerSignature:nil verified:NO];
+  resolve( @{} );
+}
+
 
 // Create RCT-serializable transaction/details object
 - (NSDictionary*) createTransactionDetailsObject: (MPTransaction*)transaction

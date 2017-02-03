@@ -25,6 +25,8 @@ _optionals_: Additional data to pass to Payworks such as applicationFee. Refer t
 
 * `submitSignature(image)` -- Send a captured signature when a _PayworksTransactionEvent_ event contains the _action_ key with value _MPTransactionActionCustomerSignature_.  The _image_ parameter is anything supported by [RCTConvert](https://github.com/facebook/react-native/blob/master/React/Base/RCTConvert.m).
 
+* `cancelSignature()` -- [Abort the transaction](http://www.payworks.mpymnt.com/node/100).
+
 #### Events
 Events are emitted by NativeAppEventEmitter under the name `PayworksTransactionEvent`. During the transaction, the response payload contains a _details_ key.  If an action is required (e.g. signature), the _action_ key will be populated.
 
