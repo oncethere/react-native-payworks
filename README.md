@@ -17,11 +17,11 @@ The initial release supports iOS and Stripe only.  Android support is TBD.  Pull
 All available methods are promise-based:
 
 * `transaction(paramObj)` -- Initiate a charge on the card reader. Upon completion of a transaction, the promise resolves with a _status_ key.  The _transaction_ method accepts an object as the first parameter containing the following fields:
-_merchantIdentifier_: Payworks-generated merchant ID.
-_merchantSecretKey_: Payworks-generated merchant secret key.
-_chargeWithAmount_: Amount to charge.
-_currency_: Currency to use for the charge (22 indicates USD).
-_optionals_: Additional data to pass to Payworks such as applicationFee. Refer to the [Payworks Transactions with Stripe documentation](http://www.payworks.mpymnt.com/node/268) for details.
+ * _merchantIdentifier_: Payworks-generated merchant ID.
+ * _merchantSecretKey_: Payworks-generated merchant secret key.
+ * _chargeWithAmount_: Amount to charge.
+ * _currency_: Currency to use for the charge (22 indicates USD).
+ * _optionals_: Additional data to pass to Payworks such as applicationFee. Refer to the [Payworks Transactions with Stripe documentation](http://www.payworks.mpymnt.com/node/268) for details.
 
 * `submitSignature(image)` -- Send a captured signature when a _PayworksTransactionEvent_ event contains the _action_ key with value _MPTransactionActionCustomerSignature_.  The _image_ parameter is anything supported by [RCTConvert](https://github.com/facebook/react-native/blob/master/React/Base/RCTConvert.m).
 
