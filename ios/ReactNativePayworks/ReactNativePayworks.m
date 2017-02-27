@@ -22,7 +22,7 @@ RCT_REMAP_METHOD(transaction,
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
     MPTransactionProvider* transactionProvider =
-    [MPMpos transactionProviderForMode:MPProviderModeTEST
+    [MPMpos transactionProviderForMode:[RCTConvert int:xactionParams[@"providerMode"]]
                     merchantIdentifier:xactionParams[@"merchantIdentifier"]
                      merchantSecretKey:xactionParams[@"merchantSecretKey"] ];
 

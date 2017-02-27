@@ -17,6 +17,7 @@ The initial release supports iOS and Stripe only.  Android support is TBD.  Pull
 All available methods are promise-based:
 
 * `transaction(paramObj)` -- Initiate a charge on the card reader. Upon completion of a transaction, the promise resolves with a _status_ key.  The _transaction_ method accepts an object as the first parameter containing the following fields:
+ * _providerMode_: [MPProviderMode](http://www.payworks.mpymnt.com/node/272): LIVE=1, TEST=2, MOCK=3, JUNGLE=4, LIVE_FIXED=5, TEST_FIXED=6.
  * _merchantIdentifier_: Payworks-generated merchant ID.
  * _merchantSecretKey_: Payworks-generated merchant secret key.
  * _chargeWithAmount_: Amount to charge.

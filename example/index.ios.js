@@ -82,6 +82,7 @@ class RNPDemo extends Component {
     }
     this.setState({ processing: true });
     ReactNativePayworks.transaction({
+      providerMode: 2, // Test
       merchantIdentifier: "ff4487b8-f820-4204-a304-4fb96dc94016",
       merchantSecretKey: "5Hchy5Ws6Dn5xUiqJH7Q1VoPdIT3FTw9",
       chargeWithAmount: 10,
