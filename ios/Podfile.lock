@@ -1,51 +1,55 @@
 PODS:
-  - CocoaLumberjack (2.0.3):
-    - CocoaLumberjack/Default (= 2.0.3)
-    - CocoaLumberjack/Extensions (= 2.0.3)
-  - CocoaLumberjack/Core (2.0.3)
-  - CocoaLumberjack/Default (2.0.3):
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.3):
+  - CocoaLumberjack/Extensions (2.4.0):
     - CocoaLumberjack/Default
-  - payworks (2.16.0):
-    - payworks/mpos (= 2.16.0)
-  - payworks/mpos (2.16.0):
-    - payworks/mpos/accessories (= 2.16.0)
-    - payworks/mpos/comlinks (= 2.16.0)
-    - payworks/mpos/core (= 2.16.0)
-  - payworks/mpos/accessories (2.16.0):
-    - payworks/mpos/accessories/miura (= 2.16.0)
-    - payworks/mpos/accessories/sewoo (= 2.16.0)
-    - payworks/mpos/accessories/verifone-e105 (= 2.16.0)
-  - payworks/mpos/accessories/miura (2.16.0):
+  - payworks (2.20.1):
+    - payworks/mpos (= 2.20.1)
+  - payworks/mpos (2.20.1):
+    - payworks/mpos/accessories (= 2.20.1)
+    - payworks/mpos/comlinks (= 2.20.1)
+    - payworks/mpos/core (= 2.20.1)
+  - payworks/mpos/accessories (2.20.1):
+    - payworks/mpos/accessories/miura (= 2.20.1)
+    - payworks/mpos/accessories/sewoo (= 2.20.1)
+    - payworks/mpos/accessories/verifone-e105 (= 2.20.1)
+    - payworks/mpos/accessories/verifone-e3x5 (= 2.20.1)
+  - payworks/mpos/accessories/miura (2.20.1):
     - payworks/mpos/comlinks/externalaccessory
     - payworks/mpos/comlinks/tcp
     - payworks/mpos/core
-  - payworks/mpos/accessories/sewoo (2.16.0):
+  - payworks/mpos/accessories/sewoo (2.20.1):
     - payworks/mpos/core
-  - payworks/mpos/accessories/verifone-e105 (2.16.0):
+  - payworks/mpos/accessories/verifone-e105 (2.20.1):
     - payworks/mpos/comlinks/verifone
     - payworks/mpos/core
-  - payworks/mpos/comlinks (2.16.0):
-    - payworks/mpos/comlinks/externalaccessory (= 2.16.0)
-    - payworks/mpos/comlinks/tcp (= 2.16.0)
-    - payworks/mpos/comlinks/verifone (= 2.16.0)
-  - payworks/mpos/comlinks/externalaccessory (2.16.0):
+  - payworks/mpos/accessories/verifone-e3x5 (2.20.1):
+    - payworks/mpos/comlinks/verifone
     - payworks/mpos/core
-  - payworks/mpos/comlinks/tcp (2.16.0):
+  - payworks/mpos/comlinks (2.20.1):
+    - payworks/mpos/comlinks/externalaccessory (= 2.20.1)
+    - payworks/mpos/comlinks/tcp (= 2.20.1)
+    - payworks/mpos/comlinks/verifone (= 2.20.1)
+  - payworks/mpos/comlinks/externalaccessory (2.20.1):
     - payworks/mpos/core
-  - payworks/mpos/comlinks/verifone (2.16.0):
+  - payworks/mpos/comlinks/tcp (2.20.1):
     - payworks/mpos/core
-  - payworks/mpos/core (2.16.0):
-    - CocoaLumberjack (~> 2.0.0)
+  - payworks/mpos/comlinks/verifone (2.20.1):
+    - payworks/mpos/core
+  - payworks/mpos/core (2.20.1):
+    - CocoaLumberjack (~> 2.4)
 
 DEPENDENCIES:
-  - payworks (~> 2.16.0)
+  - payworks (~> 2.20.1)
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: f58d8a19629f4d8379ae14bb3534def24161430e
-  payworks: 8dcb08fc088d66ba64e0725dbe70a3dba69346aa
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  payworks: 3008703b8b3d33eb1f2d8b56da81b7243b0bccea
 
-PODFILE CHECKSUM: 2c1f8b782c42728498683cf4674642e4ad0a4ab6
+PODFILE CHECKSUM: 2137d7b08bdc53d58ad3838942baf60395673e78
 
 COCOAPODS: 1.1.1

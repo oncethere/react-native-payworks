@@ -21,13 +21,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		2D90584C033D179272D3933A /* libPods-RNPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B47EDFBFAA9A31EC9AD238 /* libPods-RNPDemo.a */; };
 		808C6D7AD40B47BA9B7FD191 /* libRNSketch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6D96F1606E4A598C9B3AE7 /* libRNSketch.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		CE90BE6A1E3962AB0018FD59 /* libReactNativePayworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FD5071E39548F0055AAFA /* libReactNativePayworks.a */; };
 		CEA9CF721E3A4E920031A71A /* libReactNativePayworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8FD5071E39548F0055AAFA /* libReactNativePayworks.a */; };
 		CEA9CF7F1E3A4E970031A71A /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA9CF7E1E3A4E970031A71A /* libCocoaLumberjack.a */; };
+		CEF540EB1EA963F900A20F4A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF540E81EA9639200A20F4A /* libReact.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +152,7 @@
 		C7D943E6AC1D40F294F6DC5F /* RNSketch.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSketch.xcodeproj; path = "../node_modules/react-native-sketch/RNSketch.xcodeproj"; sourceTree = "<group>"; };
 		CE8FD4F71E39548F0055AAFA /* ReactNativePayworks.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePayworks.xcodeproj; path = ../../ios/ReactNativePayworks.xcodeproj; sourceTree = "<group>"; };
 		CEA9CF7E1E3A4E970031A71A /* libCocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaLumberjack.a; path = "../../../../Library/Developer/Xcode/DerivedData/RNPDemo-agaylqixelmghndmethovdofchcd/Build/Products/Debug-iphoneos/CocoaLumberjack/libCocoaLumberjack.a"; sourceTree = "<group>"; };
+		CEF540E81EA9639200A20F4A /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "../../../../Library/Developer/Xcode/DerivedData/RNPDemo-agaylqixelmghndmethovdofchcd/Build/Products/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
 		D32A628EAE8953C99B8952F0 /* Pods-RNPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNPDemo/Pods-RNPDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,9 +170,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF540EB1EA963F900A20F4A /* libReact.a in Frameworks */,
 				CEA9CF7F1E3A4E970031A71A /* libCocoaLumberjack.a in Frameworks */,
 				CEA9CF721E3A4E920031A71A /* libReactNativePayworks.a in Frameworks */,
-				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -296,6 +297,7 @@
 		44326D4666971FBC05456A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEF540E81EA9639200A20F4A /* libReact.a */,
 				CEA9CF7E1E3A4E970031A71A /* libCocoaLumberjack.a */,
 				55B47EDFBFAA9A31EC9AD238 /* libPods-RNPDemo.a */,
 			);

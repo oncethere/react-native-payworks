@@ -4,7 +4,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 source 'https://bitbucket.org/mpymnt/io.mpymnt.repo.pods.git'
 
 def pods
-  pod 'payworks', '~> 2.16.0'
+  pod 'payworks', '~> 2.20.1'
 end
 
 target 'ReactNativePayworks' do

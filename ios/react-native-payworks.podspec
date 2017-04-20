@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source_files  = "ReactNativePayworks/*.{h,m}"
 
   s.platform     = :ios, "8.0"
-  s.dependency 'payworks', '~> 2.16.0'
+  s.dependency 'payworks', '~> 2.20.1'
 end

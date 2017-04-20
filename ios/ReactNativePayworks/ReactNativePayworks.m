@@ -12,7 +12,8 @@
 
 @synthesize bridge = _bridge;
 
-MPTransactionProcess *signatureProcess;
+MPTransactionProvider* transactionProvider;
+MPTransactionProcess *_process;
 
 RCT_EXPORT_MODULE()
 
@@ -21,7 +22,7 @@ RCT_REMAP_METHOD(transaction,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-    MPTransactionProvider* transactionProvider =
+    transactionProvider =
     [MPMpos transactionProviderForMode:[RCTConvert int:xactionParams[@"providerMode"]]
                     merchantIdentifier:xactionParams[@"merchantIdentifier"]
                      merchantSecretKey:xactionParams[@"merchantSecretKey"] ];
@@ -59,6 +60,7 @@ RCT_REMAP_METHOD(transaction,
                                                           MPTransaction *transaction)
      {
         //  NSLog(@"registered MPTransactionProcess, transaction id: %@", transaction.identifier);
+         _process = process;
          [self.bridge.eventDispatcher sendAppEventWithName:@"PayworksTransactionEvent"
                                                       body:[self createTransactionDetailsObject:transaction details:nil]];
      }
@@ -67,6 +69,7 @@ RCT_REMAP_METHOD(transaction,
                                                         MPTransactionProcessDetails *details)
      {
         //  NSLog(@"%@\n%@", details.information[0], details.information[1]);
+         _process = process;
          [self.bridge.eventDispatcher sendAppEventWithName:@"PayworksTransactionEvent"
                                                       body:[self createTransactionDetailsObject:transaction details:details]];
      }
@@ -78,7 +81,6 @@ RCT_REMAP_METHOD(transaction,
          switch (action) {
              case MPTransactionActionCustomerSignature: {
                 // NSLog(@"show a UI that let's the customer provide his/her signature!");
-                signatureProcess = process;
                 [self.bridge.eventDispatcher sendAppEventWithName:@"PayworksTransactionEvent"
                                                              body:@{@"action": @"MPTransactionActionCustomerSignature"}];
                 break;
@@ -158,7 +160,7 @@ RCT_REMAP_METHOD(submitSignature,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  [signatureProcess continueWithCustomerSignature:signature verified:YES];
+  [_process continueWithCustomerSignature:signature verified:YES];
 
   // Add this instead, if you would like to collect the customer signature on the printed merchant receipt
   // [process continueWithCustomerSignatureOnReceipt];
@@ -170,10 +172,31 @@ RCT_REMAP_METHOD(cancelSignature,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  [signatureProcess continueWithCustomerSignature:nil verified:NO];
+  [_process continueWithCustomerSignature:nil verified:NO];
   resolve( @{} );
 }
 
+RCT_REMAP_METHOD(abortTransaction,
+                 abort_resolver:(RCTPromiseResolveBlock)resolve
+                 abort_rejecter:(RCTPromiseRejectBlock)reject)
+{
+  bool abortResponse = [_process requestAbort];
+  resolve( @{@"aborted": [NSNumber numberWithBool:abortResponse]} );
+}
+
+RCT_REMAP_METHOD(disconnect,
+                 disconnect_resolver:(RCTPromiseResolveBlock)resolve
+                 disconnect_rejecter:(RCTPromiseRejectBlock)reject)
+{
+  MPAccessoryModule *accessoryModule = transactionProvider.accessoryModule;
+  MPAccessory *accessory = [[accessoryModule connectedAccesories] firstObject];
+
+  [accessoryModule disconnectFromAccessory:accessory statusChanged:^(MPAccessoryProcess *accesoryProcess, MPAccessory *accessory, MPAccessoryProcessDetails *details) {
+    // status updates on the disconnect process
+  } completed:^(MPAccessoryProcess *accesoryProcess, MPAccessory *accessory, MPAccessoryProcessDetails *details) {
+    resolve( @{@"MPAccessoryProcessDetailsState": [NSNumber numberWithUnsignedLong:details.state]} );
+  }];
+}
 
 // Create RCT-serializable transaction/details object
 - (NSDictionary*) createTransactionDetailsObject: (MPTransaction*)transaction

@@ -29,18 +29,19 @@ class RNPDemo extends Component {
     this.onSave = this.onSave.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
     this.payNowClick = this.payNowClick.bind(this);
+    this.cancelTransaction = this.cancelTransaction.bind(this);
   }
 
   componentWillMount() {
     this.payworksEventSub = NativeAppEventEmitter.addListener(
       'PayworksTransactionEvent',
       (data) => {
-        if (data.details) {
+        if (data.details && data.details.information) {
           let details = [];
-          for (let i=0; i<data.details.length; i++) {
+          for (let i=0; i<data.details.information.length; i++) {
             details.push(
               <Text style={styles.instructions} key={i}>
-                {data.details[i]}
+                {data.details.information[i]}
               </Text>
             );
           }
@@ -103,6 +104,17 @@ class RNPDemo extends Component {
       });
   }
 
+  cancelTransaction() {
+    if(!this.state.processing) {
+      return;
+    }
+    ReactNativePayworks.abortTransaction().then(
+      (response) =>{
+        this.setState({ processing: false });
+        console.log("PayworksNative transaction cancel status " + JSON.stringify(response));
+      });
+  }
+
   render() {
     let buttonStyle = this.state.processing? styles.buttonDisabled : null;
     return (
@@ -113,12 +125,21 @@ class RNPDemo extends Component {
         <View>
           {this.state.details}
         </View>
-        <TouchableHighlight
-          style={[styles.button, buttonStyle]}
-          onPress={this.payNowClick}
-          underlayColor="#f1f1f1">
-          <Text style={styles.buttonText}>Pay Now</Text>
-        </TouchableHighlight>
+        { !this.state.processing ?
+          <TouchableHighlight
+            style={[styles.button, buttonStyle]}
+            onPress={this.payNowClick}
+            underlayColor="#f1f1f1">
+            <Text style={styles.buttonText}>Pay Now</Text>
+          </TouchableHighlight>
+          :
+          <TouchableHighlight
+            style={[styles.button, buttonStyle]}
+            onPress={this.cancelTransaction}
+            underlayColor="#f1f1f1">
+            <Text style={styles.buttonText}>Cancel Transaction</Text>
+          </TouchableHighlight>
+        }
 
         {this.renderSignature(this.state.showSignature)}
       </View>
