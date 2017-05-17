@@ -98,6 +98,5 @@ The `example/` directory has a sample project using the ReactNativePayworks libr
 
 ## ToDo
 * Payworks iOS library is built without Bitcode, requiring the RN app to be built without it.
-* Upgrade to React Native 0.40 (currently at 0.34.1)
 * Android support
 * Tests
