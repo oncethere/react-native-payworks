@@ -11,9 +11,9 @@
 
 #if __has_include(<React/RCTBridgeModule.h>)
 // React Native >= 0.40
-#import "React/RCTConvert.h"
-#import "React/RCTEventDispatcher.h"
-#import "React/RCTBridgeModule.h"
+#import <React/RCTConvert.h>
+#import <React/RCTEventDispatcher.h>
+#import <React/RCTBridgeModule.h>
 #else
 // React Native <= 0.39
 #import "RCTConvert.h"
