@@ -46,6 +46,12 @@ RCT_REMAP_METHOD(transaction,
                                                             remote:@"192.168.254.123"
                                                               port:38521
                                                          optionals:nil];
+    } else if ([xactionParams[@"linkType"] isEqualToString:@"Verifone"]) {
+      // When using Verifone readers via WiFi or Ethernet, use the following parameters:
+      ap = [MPAccessoryParameters tcpAccessoryParametersWithFamily:MPAccessoryFamilyVerifoneVIPA
+                                                            remote:@"192.168.254.123"
+                                                              port:16107
+                                                         optionals:nil];
     } else {
       // When using the Bluetooth Miura Shuttle / M007 / M010, use the following parameters:
       ap = [MPAccessoryParameters externalAccessoryParametersWithFamily:MPAccessoryFamilyMiuraMPI

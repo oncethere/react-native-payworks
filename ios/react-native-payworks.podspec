@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "react-native-payworks"
-  s.version      = "0.1.0"
+  s.version      = "0.2.2"
   s.license      = "MIT"
   s.homepage     = "https://github.com/oncethere/react-native-payworks"
   s.authors      = { 'Peace Chen' => ''}
@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source_files  = "ReactNativePayworks/*.{h,m}"
 
   s.platform     = :ios, "8.0"
-  s.dependency 'payworks', '~> 2.20.1'
+  s.dependency 'payworks', '~> 2.31.2'
 end

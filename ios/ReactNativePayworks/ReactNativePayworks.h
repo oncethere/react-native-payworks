@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <mpos.core/mpos-extended.h>
+#import <mpos_core/mpos_extended.h>
 
 #if __has_include(<React/RCTBridgeModule.h>)
 // React Native >= 0.40

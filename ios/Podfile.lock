@@ -1,55 +1,83 @@
 PODS:
-  - CocoaLumberjack (2.4.0):
-    - CocoaLumberjack/Default (= 2.4.0)
-    - CocoaLumberjack/Extensions (= 2.4.0)
-  - CocoaLumberjack/Core (2.4.0)
-  - CocoaLumberjack/Default (2.4.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.4.0):
+  - CocoaLumberjack (3.4.1):
+    - CocoaLumberjack/Default (= 3.4.1)
+    - CocoaLumberjack/Extensions (= 3.4.1)
+  - CocoaLumberjack/Default (3.4.1)
+  - CocoaLumberjack/Extensions (3.4.1):
     - CocoaLumberjack/Default
-  - payworks (2.20.1):
-    - payworks/mpos (= 2.20.1)
-  - payworks/mpos (2.20.1):
-    - payworks/mpos/accessories (= 2.20.1)
-    - payworks/mpos/comlinks (= 2.20.1)
-    - payworks/mpos/core (= 2.20.1)
-  - payworks/mpos/accessories (2.20.1):
-    - payworks/mpos/accessories/miura (= 2.20.1)
-    - payworks/mpos/accessories/sewoo (= 2.20.1)
-    - payworks/mpos/accessories/verifone-e105 (= 2.20.1)
-    - payworks/mpos/accessories/verifone-e3x5 (= 2.20.1)
-  - payworks/mpos/accessories/miura (2.20.1):
+  - MPAFNetworking (2.5.4):
+    - MPAFNetworking/NSURLConnection (= 2.5.4)
+    - MPAFNetworking/NSURLSession (= 2.5.4)
+    - MPAFNetworking/Reachability (= 2.5.4)
+    - MPAFNetworking/Security (= 2.5.4)
+    - MPAFNetworking/Serialization (= 2.5.4)
+    - MPAFNetworking/UIKit (= 2.5.4)
+  - MPAFNetworking/NSURLConnection (2.5.4):
+    - MPAFNetworking/Reachability
+    - MPAFNetworking/Security
+    - MPAFNetworking/Serialization
+  - MPAFNetworking/NSURLSession (2.5.4):
+    - MPAFNetworking/Reachability
+    - MPAFNetworking/Security
+    - MPAFNetworking/Serialization
+  - MPAFNetworking/Reachability (2.5.4)
+  - MPAFNetworking/Security (2.5.4)
+  - MPAFNetworking/Serialization (2.5.4)
+  - MPAFNetworking/UIKit (2.5.4):
+    - MPAFNetworking/NSURLConnection
+    - MPAFNetworking/NSURLSession
+  - payworks (2.31.2):
+    - payworks/mpos (= 2.31.2)
+  - payworks/mpos (2.31.2):
+    - payworks/mpos/accessories (= 2.31.2)
+    - payworks/mpos/comlinks (= 2.31.2)
+    - payworks/mpos/core (= 2.31.2)
+  - payworks/mpos/accessories (2.31.2):
+    - payworks/mpos/accessories/miura (= 2.31.2)
+    - payworks/mpos/accessories/sewoo (= 2.31.2)
+    - payworks/mpos/accessories/verifone (= 2.31.2)
+    - payworks/mpos/accessories/vipa (= 2.31.2)
+  - payworks/mpos/accessories/miura (2.31.2):
     - payworks/mpos/comlinks/externalaccessory
     - payworks/mpos/comlinks/tcp
     - payworks/mpos/core
-  - payworks/mpos/accessories/sewoo (2.20.1):
+  - payworks/mpos/accessories/sewoo (2.31.2):
     - payworks/mpos/core
-  - payworks/mpos/accessories/verifone-e105 (2.20.1):
+  - payworks/mpos/accessories/verifone (2.31.2):
     - payworks/mpos/comlinks/verifone
     - payworks/mpos/core
-  - payworks/mpos/accessories/verifone-e3x5 (2.20.1):
-    - payworks/mpos/comlinks/verifone
+  - payworks/mpos/accessories/vipa (2.31.2):
+    - payworks/mpos/comlinks/tcp
     - payworks/mpos/core
-  - payworks/mpos/comlinks (2.20.1):
-    - payworks/mpos/comlinks/externalaccessory (= 2.20.1)
-    - payworks/mpos/comlinks/tcp (= 2.20.1)
-    - payworks/mpos/comlinks/verifone (= 2.20.1)
-  - payworks/mpos/comlinks/externalaccessory (2.20.1):
+  - payworks/mpos/comlinks (2.31.2):
+    - payworks/mpos/comlinks/externalaccessory (= 2.31.2)
+    - payworks/mpos/comlinks/tcp (= 2.31.2)
+    - payworks/mpos/comlinks/verifone (= 2.31.2)
+  - payworks/mpos/comlinks/externalaccessory (2.31.2):
     - payworks/mpos/core
-  - payworks/mpos/comlinks/tcp (2.20.1):
+  - payworks/mpos/comlinks/tcp (2.31.2):
     - payworks/mpos/core
-  - payworks/mpos/comlinks/verifone (2.20.1):
+  - payworks/mpos/comlinks/verifone (2.31.2):
     - payworks/mpos/core
-  - payworks/mpos/core (2.20.1):
-    - CocoaLumberjack (~> 2.4)
+  - payworks/mpos/core (2.31.2):
+    - CocoaLumberjack (~> 3.2)
+    - MPAFNetworking (~> 2.5.4)
 
 DEPENDENCIES:
-  - payworks (~> 2.20.1)
+  - payworks (~> 2.31.2)
+
+SPEC REPOS:
+  https://bitbucket.org/mpymnt/io.mpymnt.repo.pods.git:
+    - MPAFNetworking
+    - payworks
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaLumberjack
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
-  payworks: 3008703b8b3d33eb1f2d8b56da81b7243b0bccea
+  CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
+  MPAFNetworking: 7a85f28e8af049ff2de164b1f54724e8eebe0aac
+  payworks: edba6d9b3f19cd6458a0f0982df49fb0c029e32c
 
-PODFILE CHECKSUM: 2137d7b08bdc53d58ad3838942baf60395673e78
+PODFILE CHECKSUM: bc23a630d59a3173f77f08740184252f0e549495
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0
