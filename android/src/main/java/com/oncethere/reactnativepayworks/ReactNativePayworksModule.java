@@ -2,7 +2,7 @@
 //  ReactNativePayworks
 //
 //  Created by Peace Chen on 2/27/2018.
-//  Copyright © 2018 OnceThere. All rights reserved.
+//  Copyright OnceThere. All rights reserved.
 //
 
 package com.oncethere.reactnativepayworks;

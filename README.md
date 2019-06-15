@@ -98,5 +98,9 @@ The `example/` directory has a sample project using the ReactNativePayworks libr
 
 ## ToDo
 *   Payworks iOS library is built without Bitcode, requiring the RN app to be built without it.
-*   Android support
+*   Update example project for Android.
 *   Tests
+
+## License
+
+React Native Payworks is [Apache Licensed](./LICENSE).

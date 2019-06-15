@@ -1,3 +1,10 @@
+//
+//  ReactNativePayworks
+//
+//  Copyright OnceThere. All rights reserved.
+//  Created by Peace Chen on 2/27/2018.
+//
+
 /**
  * React Native integration Demo using PayworksNative library
  *
